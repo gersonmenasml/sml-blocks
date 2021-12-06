@@ -140,6 +140,10 @@ add_action( 'widgets_init', 'sml_blocks_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sml_blocks_scripts() {
+	wp_register_style( 'tailwind', 'https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' );
+	wp_enqueue_style('tailwind');
+	wp_register_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' );
+	wp_enqueue_style('fontawesome');
 	wp_enqueue_style( 'sml-blocks-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'sml-blocks-style', 'rtl', 'replace' );
 
@@ -183,4 +187,50 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
+}
+
+/**
+ * Hide Admin bar
+ */
+add_filter('show_admin_bar', '__return_false');
+
+/**
+ *
+ * Custom Options page ACF
+ */
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+	));
+	
+}
+
+
+/**
+ * Register Blocks
+ */
+add_action('acf/init', 'my_acf_init_block_types');
+function my_acf_init_block_types() {
+
+    // Check function exists.
+    if( function_exists('acf_register_block_type') ) {
+
+        // register a Title
+        acf_register_block_type(array(
+            'name'              => 'title',
+            'title'             => __('Title'),
+            'description'       => __('Title with underline'),
+            'render_template'   => 'template-parts/blocks/title/title.php',
+			'enqueue_style' 	=> get_template_directory_uri() . '/template-parts/blocks/title/title.css',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'title', 'heading' ),
+			'supports'          => array( 'anchor' => true, 'jsx' => true, )
+        ));
+		
+
+    }
 }
