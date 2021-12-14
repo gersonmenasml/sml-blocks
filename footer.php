@@ -14,10 +14,7 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sml-blocks' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'sml-blocks' ), 'WordPress' );
-				?>
+
 			</a>
 			<span class="sep"> | </span>
 				<?php
