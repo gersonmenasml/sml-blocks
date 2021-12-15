@@ -10,7 +10,7 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'Two columns of text-' . $block['id'];
+$id = 'two-columns' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
@@ -26,6 +26,8 @@ if( !empty($block['align']) ) {
 
 // Load values and assing defaults.
 $text = get_field('text') ?: 'Text here...';
+$title = get_field('title') ?: 'Text here...';
+$subtitle = get_field('subtitle') ?: 'Text here...';
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
@@ -36,25 +38,17 @@ $text = get_field('text') ?: 'Text here...';
                 <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-7 md:gap-y-10">
                     <div class="relative">
                         <div>
-                            <h3 class="pt-1 mt-40 mr-0 lg:mr-44 text-3xl leading-6 font-semibold text-gray-900 text-left md:text-center">Heading here</h3>
+                            <h3 class="pt-1 mt-40 mr-0 lg:mr-44 text-3xl leading-6 font-semibold text-gray-900 text-left md:text-center"><?php echo $title; ?></h3>
                         </div>
                         <div class="mt-8 mr-0 lg:mr-44 text-xs text-black text-left md:text-center">
-                            Paragraph here
+                        <?php echo $subtitle; ?>
                         </div>
                     </div>
 
                     <div class="relative">
 
                         <div class="visible md:visible mt-6 mr-0 lg:mr-44 text-xs text-black text-left md:text-center">
-                            Paragraph here
-                        </div>
-
-                        <div class="visible md:visible mt-6 mr-0 lg:mr-44 text-xs text-black text-left md:text-center">
-                        Paragraph here
-                        </div>
-
-                        <div class="visible md:visible mt-6 mr-0 lg:mr-44 text-xs text-black text-left md:text-center">
-                        Paragraph here
+                            <InnerBlocks />
                         </div>
                     </div>
 
