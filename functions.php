@@ -230,7 +230,20 @@ function my_acf_init_block_types() {
             'keywords'          => array( 'title', 'heading' ),
 			'supports'          => array( 'anchor' => true, 'jsx' => true, )
         ));
-		
 
+		// register a Columns
+		acf_register_block_type(array(
+            'name'              => 'columns',
+            'title'             => __('Two columns of text'),
+            'description'       => __('Two columns'),
+            'render_template'   => 'template-parts/blocks/two-columns/two-columns.php',
+			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/two-columns/two-columns.css',
+            'category'          => 'layout',
+            'icon'              => 'columns',
+            'keywords'          => array( 'columns', 'two columns' ),
+			'supports'          => array( 'anchor' => true, 'jsx' => true, )
+        ));
+
+		
     }
 }
