@@ -10,7 +10,11 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
+<<<<<<< HEAD
 $id = 'Two-columns' . $block['id'];
+=======
+$id = 'two-columns' . $block['id'];
+>>>>>>> bc34313c332dc6399a68d97260bf33ce172db01f
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
@@ -48,9 +52,8 @@ $subtitle = get_field('subtitle') ?: 'Text here...';
                     <div class="relative">
 
                         <div class="visible md:visible mt-6 mr-0 lg:mr-44 text-xs text-black text-left md:text-center">
-                        <InnerBlocks />
+                            <InnerBlocks />
                         </div>
-
                     </div>
 
             </div>
