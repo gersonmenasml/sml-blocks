@@ -10,7 +10,7 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'gallery' . $block['id'];
+$id = 'custom-gallery' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
@@ -35,9 +35,11 @@ $image2 = get_field('image2');
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+
+            
 <div class="min-h-screen  flex flex-wrap items-center justify-start">
         <div class="mr-0 lg:mr-0 -space-y-16 md:py-24 px-40 md:px-80 w-full md:max-w-min sm:w-full bg-blue-200 transform scale-1 sm:scale-1 md:scale-105 lg:scale-105 xl:scale-105 z-40  shadow-none sm:shadow-none md:shadow-xl lg:shadow-xl xl:shadow-xl">
-        <?php echo $image2; ?>
+            <img src="<?php echo $image; ?>" alt="">
         </div>
 
         <div class="py-6 sm:py-8 px-10 w-full md:max-w-min sm:w-full bg-white z-50  shadow-none sm:shadow-none md:shadow-xl lg:shadow-xl xl:shadow-xl">
@@ -84,7 +86,7 @@ $image2 = get_field('image2');
         </div>
 
         <div class="mr-0 lg:mr-0 -space-y-16 md:py-24 px-80 w-full md:max-w-min sm:w-full bg-blue-200 transform scale-1 sm:scale-1 md:scale-105 lg:scale-105 xl:scale-105 z-40  shadow-none sm:shadow-none md:shadow-xl lg:shadow-xl xl:shadow-xl">
-        <img src="<?php echo $image2; ?>">
+        <img src="<?php echo $image2; ?>" alt="">
         </div>
 
         <!-- Mobile version for our community section -->
