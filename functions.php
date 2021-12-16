@@ -231,7 +231,7 @@ function my_acf_init_block_types() {
 			'supports'          => array( 'anchor' => true, 'jsx' => true, )
         ));
 
-		// register a Columns
+		// register Columns
 		acf_register_block_type(array(
             'name'              => 'columns',
             'title'             => __('Two columns of text'),
@@ -244,6 +244,31 @@ function my_acf_init_block_types() {
 			'supports'          => array( 'anchor' => true, 'jsx' => true, )
         ));
 
+		// register a Photo Cards
+		acf_register_block_type(array(
+            'name'              => 'Photo-cards',
+            'title'             => __('Photo Cards'),
+            'description'       => __('Photo Cards'),
+            'render_template'   => 'template-parts/blocks/Photo-Cards/Photo-Cards.php',
+			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/Photo-Cards/Photo-Cards.css',
+            'category'          => 'layout',
+            'icon'              => 'image',
+            'keywords'          => array( 'cards', 'photo-cards' ),
+			'supports'          => array( 'anchor' => true, 'jsx' => true, )
+        ));
+
+		// register a gallery
+		acf_register_block_type(array(
+            'name'              => 'galerry',
+            'title'             => __('gallery'),
+            'description'       => __('gallery'),
+            'render_template'   => 'template-parts/blocks/gallery/gallery.php',
+			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/gallery/gallery.css',
+            'category'          => 'layout',
+            'icon'              => 'image',
+            'keywords'          => array( 'gallery' ),
+			'supports'          => array( 'anchor' => true, 'jsx' => true, )
+        ));
 		
     }
 }
