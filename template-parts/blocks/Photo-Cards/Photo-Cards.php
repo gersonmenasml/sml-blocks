@@ -45,11 +45,15 @@ $right_image_2 = get_field('right_image_2');
 
                 <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-7 md:gap-y-10">
                     <div class="relative">
-                        <div class="w-full h-full shadow-lg mb-4">
-                            <img class="object-center object-cover w-full h-full" src="<?php echo $left_image; ?>" alt="photo">
+                        <div class="w-full shadow-lg mb-4">
+                            <figure>
+                            <img class="object-center object-cover" src="<?php echo $left_image; ?>" alt="photo">
+</figure>
                         </div>
-                        <div class="w-full h-full shadow-lg">
+                        <div class="w-full shadow-lg">
+                            <figure>
                             <img class="object-center object-cover w-full h-full" src="<?php echo $left_image_2; ?>" alt="photo">
+</figure>
                         </div>
                         <div>
                             <h3 class="pt-1 mt-8 mr-44 ml-2 text-3xl leading-6 font-semibold text-gray-900 text-left md:text-left"><?php echo $heading_2; ?></h3>
@@ -73,12 +77,16 @@ $right_image_2 = get_field('right_image_2');
                             <h3 class="invisible md:visible pt-1 mt-2 mb-8 mr-44 ml-2 text-3xl leading-6 font-black text-gray-900 text-left md:text-left"><?php echo $heading; ?></h3>
                         </div>
 
-                        <div class="w-full h-full shadow-lg mb-4">
+                        <div class="w-full shadow-lg mb-4">
+                        <figure>
                             <img class="object-center object-cover w-full h-full" src="<?php echo $right_image; ?>" alt="photo">
+                            </figure>
                         </div>
 
-                        <div class="w-full h-full shadow-lg">
+                        <div class="w-full shadow-lg">
+                        <figure>
                             <img class="object-center object-cover w-full h-full" src="<?php echo $right_image_2; ?>" alt="photo">
+</figure>
                         </div>
 
                     <!-- right column end -->

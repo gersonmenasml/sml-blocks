@@ -104,8 +104,10 @@ $button_text_2 = get_field('button_text_2');
                 <?php echo $description2; ?>
                 </p>
             </div>
-
-            <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text_2; ?></button>
+            <?php if (get_field('button_text_2')) : ?>
+                <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text_2; ?></button>
+            <?php endif;?>
+            
 
         </div>
 
@@ -128,9 +130,9 @@ $button_text_2 = get_field('button_text_2');
                 <?php echo $description2; ?>
                 </p>
             </div>
-
+            <?php if ($button_text_2) : ?>
             <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text_2; ?></button>
-
+            <?php endif;?>
         </div>
 
     </div>
