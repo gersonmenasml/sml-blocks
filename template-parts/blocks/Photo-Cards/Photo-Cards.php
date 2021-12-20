@@ -59,7 +59,9 @@ $right_image_2 = get_field('right_image_2');
                             <h3 class="pt-1 mt-8 mr-44 ml-2 text-3xl leading-6 font-semibold text-gray-900 text-left md:text-left"><?php echo $heading_2; ?></h3>
                         </div>
                         <div class="mt-7 ml-2 mb-2 text-xs text-black text-left md:text-left">
-                        <?php echo $text_2; ?>
+                        <?php if ($text_2) : ?>
+                            <?php echo $text_2; ?>
+                        <?php endif?>
                         </div>
                     </div>
 
