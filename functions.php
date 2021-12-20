@@ -247,8 +247,8 @@ function my_acf_init_block_types() {
 		// register a Photo Cards
 		acf_register_block_type(array(
             'name'              => 'Photo-cards',
-            'title'             => __('Photo Cards'),
-            'description'       => __('Photo Cards'),
+            'title'             => __('two section photo cards'),
+            'description'       => __('four photo cards'),
             'render_template'   => 'template-parts/blocks/Photo-Cards/Photo-Cards.php',
 			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/Photo-Cards/Photo-Cards.css',
             'category'          => 'layout',
@@ -260,13 +260,26 @@ function my_acf_init_block_types() {
 		// register a gallery
 		acf_register_block_type(array(
             'name'              => 'galerry',
-            'title'             => __('gallery'),
-            'description'       => __('gallery'),
+            'title'             => __('collumn gallery'),
+            'description'       => __('two collumn gallery'),
             'render_template'   => 'template-parts/blocks/gallery/gallery.php',
 			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/gallery/gallery.css',
             'category'          => 'layout',
             'icon'              => 'image',
             'keywords'          => array( 'gallery' ),
+			'supports'          => array( 'anchor' => true, 'jsx' => true, )
+        ));
+
+		// register a category
+		acf_register_block_type(array(
+            'name'              => 'three section',
+            'title'             => __('category'),
+            'description'       => __('three categories section'),
+            'render_template'   => 'template-parts/blocks/Category/category.php',
+			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/Category/category.css',
+            'category'          => 'layout',
+            'icon'              => 'page',
+            'keywords'          => array( 'category' ),
 			'supports'          => array( 'anchor' => true, 'jsx' => true, )
         ));
 		
