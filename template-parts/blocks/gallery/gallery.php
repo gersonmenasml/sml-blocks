@@ -40,9 +40,29 @@ $button_text_2 = get_field('button_text_2');
 
             
 <div class="min-h-screen  flex flex-wrap items-center justify-start">
-        <div class="mr-0 lg:mr-0 -space-y-16 md:py-0 md:max-w-max 5 z-40  shadow-none sm:shadow-none  lg:shadow-xl xl:shadow-xl mr-0 lg:mr-80">
+        <div class="mr-0 lg:mr-0 -space-y-16 md:py-0 md:max-w-max 5 z-40  shadow-none sm:shadow-none  lg:shadow-xl xl:shadow-xl ml-0 lg:mr-80">
             <img src="<?php echo $image; ?>" alt="">
         </div>
+
+        <div class="invisible md:visible -space-y-80 md:space-y-6 py-6 px-10 w-full md:max-w-min sm:w-full bg-white z-50  shadow-none sm:shadow-none md:shadow-xl lg:shadow-xl xl:shadow-xl relative md:absolute right-20">
+
+<div class="text-left py-4 px-14">
+    <h1 class="text-gray-700 text-4xl font-black text-center"><?php echo $title; ?></h1>
+</div>
+
+<div class="h-px bg-gray-200"></div>
+
+<div class="text-center mt-3">
+    <p class="text-sm text-gray-400">
+    <?php echo $description; ?>
+    </p>
+</div>
+<?php if (get_field('button_text')) : ?>
+<button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text; ?></button>
+<?php endif;?>
+</div>
+
+<!-- Mobile version for our people section -->
 
          <div class="visible md:invisible lg:hidden py-6 sm:py-6 md:py-6 lg:py-6 xl:py-4 px-8 w-full md:max-w-min sm:w-full bg-white z-50">
 
@@ -58,31 +78,11 @@ $button_text_2 = get_field('button_text_2');
                 </p>
             </div>
             <?php if (get_field('button_text')) : ?>
-                <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text; ?></button>
-            <?php endif;?>
-
-        </div>
-
-         <!-- Mobile version for our people section -->
-
-        <div class="invisible md:visible py-6 sm:py-8 px-10 w-full md:max-w-min sm:w-full bg-white z-50  shadow-none sm:shadow-none md:shadow-xl lg:shadow-xl xl:shadow-xl relative md:absolute right-20">
-
-            <div class="text-left py-4 px-14">
-                <h1 class="text-gray-700 text-4xl text-center font-black"><?php echo $title; ?></h1>
-            </div>
-
-            <div class="h-px bg-gray-200"></div>
-
-            <div class="text-center mt-3">
-                <p class="text-sm text-gray-400">
-                <?php echo $description; ?>
-                </p>
-            </div>
-
-            <?php if ($button_text) : ?>
             <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text; ?></button>
             <?php endif;?>
+
         </div>
+
     </div>
 
     <!-- Our People section end -->
@@ -104,11 +104,9 @@ $button_text_2 = get_field('button_text_2');
                 <?php echo $description2; ?>
                 </p>
             </div>
-            <?php if (get_field('button_text_2')) : ?>
-                <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text_2; ?></button>
-            <?php endif;?>
-            
-
+<?php if (get_field('button_text_2')) : ?>
+            <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text_2; ?></button>
+<?php endif;?>
         </div>
 
         <div class="mr-0 lg:mr-0 -space-y-16 md:py-0 md:max-w-max 5 z-40  shadow-none sm:shadow-none  lg:shadow-xl xl:shadow-xl ml-0 lg:ml-80">
@@ -130,9 +128,10 @@ $button_text_2 = get_field('button_text_2');
                 <?php echo $description2; ?>
                 </p>
             </div>
-            <?php if ($button_text_2) : ?>
+            <?php if (get_field('button_text_2')) : ?>
             <button class="w-full mt-6 mb-3 py-2 text-white font-semibold bg-gray-700 hover:shadow-xl duration-200 hover:bg-gray-800"><?php echo $button_text_2; ?></button>
             <?php endif;?>
         </div>
+        
 
     </div>

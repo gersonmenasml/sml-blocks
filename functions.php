@@ -272,14 +272,14 @@ function my_acf_init_block_types() {
 
 		// register a category
 		acf_register_block_type(array(
-            'name'              => 'three section',
-            'title'             => __('category'),
+            'name'              => 'three sections',
+            'title'             => __('sections'),
             'description'       => __('three categories section'),
-            'render_template'   => 'template-parts/blocks/Category/category.php',
-			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/Category/category.css',
+            'render_template'   => 'template-parts/blocks/Category/three-section.php',
+			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/Category/three-section.css',
             'category'          => 'layout',
             'icon'              => 'page',
-            'keywords'          => array( 'category' ),
+            'keywords'          => array( 'sections' ),
 			'supports'          => array( 'anchor' => true, 'jsx' => true, )
         ));
 		

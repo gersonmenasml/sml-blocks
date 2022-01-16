@@ -38,7 +38,9 @@ $subtitle = get_field('subtitle') ?: 'Text here...';
                 <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-7 md:gap-y-10">
                     <div class="relative">
                         <div>
+                        <?php if ($title) : ?>
                             <h3 class="pt-1 mt-40 mr-0 lg:mr-44 text-3xl leading-6 font-semibold text-gray-900 text-left md:text-center"><?php echo $title; ?></h3>
+                            <?php endif;?>
                         </div>
                         <div class="mt-8 mr-0 lg:mr-44 text-xs text-black text-left md:text-center">
                         <?php echo $subtitle; ?>
