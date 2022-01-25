@@ -1,0 +1,28 @@
+html,
+body {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 30px 15px 40px;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.swiper-slide {
+    width: calc(100% / 3);
+    transition: all .25s ease-out;
+    opacity: 1;
+}
+
+.swiper-slide-active+.swiper-slide~.swiper-slide {
+    opacity: .35;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    transform: scale(.75);
+    transform-origin: center;
+}

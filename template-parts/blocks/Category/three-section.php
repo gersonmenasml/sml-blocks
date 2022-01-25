@@ -10,7 +10,7 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'custom-gallery' . $block['id'];
+$id = 'gallery' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }

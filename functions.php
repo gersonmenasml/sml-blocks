@@ -142,13 +142,21 @@ add_action( 'widgets_init', 'sml_blocks_widgets_init' );
 function sml_blocks_scripts() {
 	wp_register_style( 'tailwind', 'https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' );
 	wp_enqueue_style('tailwind');
+// CSS
+wp_register_style( 'Swiper CSS', 'https://unpkg.com/swiper@7/swiper-bundle.min.css');
+wp_register_style( 'Swiper CSS', 'https://unpkg.com/swiper/swiper-bundle.css');
+wp_enqueue_style('Swiper CSS');
+
 	wp_register_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' );
 	wp_enqueue_style('fontawesome');
 	wp_enqueue_style( 'sml-blocks-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'sml-blocks-style', 'rtl', 'replace' );
 
+// CDN
+wp_enqueue_script( 'sml-swipper-js', 'https://unpkg.com/swiper/swiper-bundle.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'sml-swipper-js', 'https://unpkg.com/swiper@7/swiper-bundle.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'sml-blocks-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	wp_enqueue_script( 'sml-blocks-carousel', get_template_directory_uri() . '/js/carousel.js', array(), _S_VERSION, true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -259,7 +267,7 @@ function my_acf_init_block_types() {
 
 		// register a gallery
 		acf_register_block_type(array(
-            'name'              => 'galerry',
+            'name'              => 'gallery',
             'title'             => __('collumn gallery'),
             'description'       => __('two collumn gallery'),
             'render_template'   => 'template-parts/blocks/gallery/gallery.php',
@@ -282,6 +290,21 @@ function my_acf_init_block_types() {
             'keywords'          => array( 'sections' ),
 			'supports'          => array( 'anchor' => true, 'jsx' => true, )
         ));
-		
+
+		// register a carousel
+		acf_register_block_type(array(
+            'name'              => 'team carousel',
+            'title'             => __('carousel'),
+            'description'       => __('team photos'),
+            'render_template'   => 'template-parts/blocks/carousel/carousel.php',
+			'enqueue_style' 	=> get_template_directory_uri() . 'template-parts/blocks/carousel/carousel.css',
+            'category'          => 'layout',
+            'icon'              => 'groups',
+            'keywords'          => array( 'team carousel' ),
+			'supports'          => array( 'anchor' => true, 'jsx' => true, )
+        ));
     }
 }
+
+
+  
